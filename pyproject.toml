@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "polars-jaro"
+version = "0.1.0"
+description = ""
+authors = ["Tyler Cross <tcross@redhat.com>"]
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+maturin = "^1.3.2"
+polars = "^0.19.13"
+strsim = "^0.0.3"
+
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+
+[project]
+name = "polars-jaro"
+version = "0.1.0"
+description = "Polars extension to enable calculating Jaro and Jaro-Winkler string metrics"
+authors = [ {name = "Tyler Cross", email = "tcross@redhat.com" } ]
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+
+[project.urls]
+repository = "https://github.com/wtcross/polars-jaro"
