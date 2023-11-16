@@ -11,7 +11,7 @@ class Jaro:
         self._expr = expr
 
     def jaro_similarity(self, other: IntoExpr) -> pl.Expr:
-        return self._expr._register_plugin(
+        return self._expr.register_plugin(
             lib=lib,
             args=[other],
             symbol="jaro_similarity",
@@ -19,7 +19,7 @@ class Jaro:
         )
 
     def jaro_winkler_similarity(self, other: IntoExpr) -> pl.Expr:
-        return self._expr._register_plugin(
+        return self._expr.register_plugin(
             lib=lib,
             args=[other],
             symbol="jaro_winkler_similarity",
@@ -27,7 +27,7 @@ class Jaro:
         )
 
     def jaro_winkler_similarity_longtol(self, other: IntoExpr) -> pl.Expr:
-        return self._expr._register_plugin(
+        return self._expr.register_plugin(
             lib=lib,
             args=[other],
             symbol="jaro_winkler_similarity_longtol",
