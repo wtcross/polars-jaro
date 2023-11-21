@@ -1,5 +1,6 @@
 mod common;
 mod jaro;
+mod hamming;
 
 use polars::prelude::*;
 use pyo3_polars::derive::polars_expr;
@@ -36,5 +37,14 @@ fn jaro_winkler_similarity_longtol(inputs: &[Series]) -> PolarsResult<Series> {
     let b = inputs[1].utf8()?;
     let out: Float64Chunked =
         arity::binary_elementwise_values(a, b, jaro::jaro_winkler_similarity_longtol);
+    Ok(out.into_series())
+}
+
+#[polars_expr(output_type=UInt32)]
+fn hamming_distance(inputs: &[Series]) -> PolarsResult<Series> {
+    let a = inputs[0].utf8()?;
+    let b = inputs[1].utf8()?;
+    let out: UInt32Chunked =
+        arity::binary_elementwise_values(a, b, hamming::hamming_distance);
     Ok(out.into_series())
 }

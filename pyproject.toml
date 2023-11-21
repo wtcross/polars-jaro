@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "polars-jaro"
-version = "0.1.0"
+name = "polars-string-metrics"
+version = "0.1.2"
 description = ""
 authors = ["Tyler Cross <tcross@redhat.com>"]
 readme = "README.md"
@@ -19,9 +19,9 @@ build-backend = "maturin"
 
 
 [project]
-name = "polars-jaro"
-version = "0.1.0"
-description = "Polars extension to enable calculating Jaro and Jaro-Winkler string metrics"
+name = "polars-string-metrics"
+version = "0.1.2"
+description = "Polars extension providing string similarity and distance functions"
 authors = [ {name = "Tyler Cross", email = "tcross@redhat.com" } ]
 requires-python = ">=3.8"
 classifiers = [
@@ -32,4 +32,4 @@ classifiers = [
 
 
 [project.urls]
-repository = "https://github.com/wtcross/polars-jaro"
+repository = "https://github.com/wtcross/polars-string-metrics"
